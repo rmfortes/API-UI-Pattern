@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import "./App.css";
 import NavBar from "./NavBar.js";
 import Slider from "./Slider.js";
+import BackButton from "./BackButton.js";
+import NextButton from "./NextButton.js";
 
 class App extends Component {
   constructor() {
@@ -24,14 +26,18 @@ class App extends Component {
 
   render() {
     let date = this.state.date;
+    let explanation = this.state.explanation;
     return (
       <div>
         <div className="navBar">
           <NavBar />
         </div>
-        <div className="App">
-          <p>{date}</p>
-          <Slider />
+        <div className="Slider">
+          <BackButton />
+          <h1>{date}</h1>
+          {/* <img src={}></img> */}
+          <p>{explanation}</p>
+          <NextButton />
         </div>
       </div>
     );

@@ -11,12 +11,22 @@ body {
 }
 
 .App {
-  border: solid #F2EDE8;
   font-family: futura, sans-serif;
-  margin: auto;
-  margin-top: 100px;
-  display: flex;
-  flex-direction: column;
-  width: 500px;
-  height: 500px;
 }
+
+button {
+  font-family: futura, sans-serif;
+  height: 600px;
+  background-color: #F2EDE8;
+  border: none
+}
+
+.Slider {
+  display: flex;
+  border: solid #F2EDE8;
+  margin: auto;
+  margin-top: 50px;
+  width: 900px;
+  height: 600px;
+}
+
