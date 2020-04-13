@@ -5,7 +5,9 @@ class Slider extends Component {
         return (
             <div className="Slider">
                 <button>Back</button>
-                <p>API Content</p>
+                {/* <p>Date will go here</p>
+                <div>img/vid will go here</div>
+                <p>Explanation will go here</p> */}
                 <button>Next</button>
             </div>
         );

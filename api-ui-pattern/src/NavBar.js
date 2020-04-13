@@ -4,7 +4,7 @@ class NavBar extends Component {
     render() {
         return (
             <div className="NavBar">
-                <nav>Pokémon Slider</nav>
+                <nav>APOD API</nav>
             </div>
         );
     }
