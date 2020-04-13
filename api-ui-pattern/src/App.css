@@ -26,29 +26,42 @@ button {
   border: 1px solid #F2EDE8;
   margin: auto;
   margin-top: 50px;
-  width: 900px;
+  width: fit-content;
   height: 600px;
 }
 
 .contents {
   font-family: futura, sans-serif;
-  width: 830px;
+  width: 900px;
   display: grid;
-  grid-template-rows: 2fr 2fr;
   grid-template-columns: 2fr 2fr;
-  grid-gap: 10px
-}
-
-h1 {
-  border: solid red;
 }
 
 .image {
-  border: solid red;
-  width: 400px
+  grid-column: 1;
+}
+
+img {
+  border-radius: 25px;
+  width: 350px;
+  margin: 35px
+}
+
+.text {
+  grid-column: 2;
+  width: fit-content;
+  height: 600px
+}
+
+h1 {
+  color: #F2EDE8
+}
+
+h3 {
+  color: #919191
 }
 
 p {
-  border: solid red;
-  width: 250px
+  width: 375px
 }
+

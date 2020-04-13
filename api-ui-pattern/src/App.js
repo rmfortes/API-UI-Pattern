@@ -10,24 +10,31 @@ class App extends Component {
     super();
 
     this.state = {
-      apod: [],
+      apod: {},
     };
   }
+
   componentDidMount() {
     let URL =
       "https://api.nasa.gov/planetary/apod?api_key=P4ncDIoRkQG82aKvVwMr8Gc4KX2dpGRTOvJptk3Y";
 
     fetch(URL)
       .then((res) => res.json())
-      .then((convertedRes) => {
-        console.log(convertedRes);
+      .then((res) => {
+        // console.log(res);
+        this.setState({
+          apod: res,
+        });
+        // console.log(this.state.apod)
       });
   }
 
   render() {
 
-    
-    
+    console.log(this.state.apod)
+
+
+
     return (
       <div>
         <div className="navBar">
@@ -35,9 +42,14 @@ class App extends Component {
         </div>
         <div className="Slider">
           <BackButton />
-          <div className = "contents">
-            <Apod />
-          </div>
+            <Apod 
+              // url={this.state.apod.url}
+              // date={this.state.apod.date} 
+              // title={this.state.apod.title} 
+              // explanation={this.state.apod.explanation} 
+              {...this.state}
+              //! the spread operator allows you to pass all the contents of an object
+            />
           <NextButton />
         </div>
       </div>
