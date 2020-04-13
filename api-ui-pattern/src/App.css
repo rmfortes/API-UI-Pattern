@@ -23,10 +23,32 @@ button {
 
 .Slider {
   display: flex;
-  border: solid #F2EDE8;
+  border: 1px solid #F2EDE8;
   margin: auto;
   margin-top: 50px;
   width: 900px;
   height: 600px;
 }
 
+.contents {
+  font-family: futura, sans-serif;
+  width: 830px;
+  display: grid;
+  grid-template-rows: 2fr 2fr;
+  grid-template-columns: 2fr 2fr;
+  grid-gap: 10px
+}
+
+h1 {
+  border: solid red;
+}
+
+.image {
+  border: solid red;
+  width: 400px
+}
+
+p {
+  border: solid red;
+  width: 250px
+}

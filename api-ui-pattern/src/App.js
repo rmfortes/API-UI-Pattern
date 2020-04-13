@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import "./App.css";
 import NavBar from "./NavBar.js";
-import Slider from "./Slider.js";
 import BackButton from "./BackButton.js";
+import Apod from "./Apod.js";
 import NextButton from "./NextButton.js";
 
 class App extends Component {
@@ -25,8 +25,9 @@ class App extends Component {
   }
 
   render() {
-    let date = this.state.date;
-    let explanation = this.state.explanation;
+
+    
+    
     return (
       <div>
         <div className="navBar">
@@ -34,9 +35,9 @@ class App extends Component {
         </div>
         <div className="Slider">
           <BackButton />
-          <h1>{date}</h1>
-          {/* <img src={}></img> */}
-          <p>{explanation}</p>
+          <div className = "contents">
+            <Apod />
+          </div>
           <NextButton />
         </div>
       </div>
