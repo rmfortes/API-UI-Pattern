@@ -26,7 +26,7 @@ class App extends Component {
         this.setState({
           apod: res,
         });
-        // console.log(this.state.apod)
+        console.log(this.state.apod.date)
       });
   }
 
