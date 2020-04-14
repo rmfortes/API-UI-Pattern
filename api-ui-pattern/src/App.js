@@ -8,6 +8,7 @@ import NextButton from "./NextButton.js";
 class App extends Component {
   constructor() {
     super();
+    this.handleBack = this.handleBack.bind(this);
 
     this.state = {
       apod: {},
@@ -29,11 +30,12 @@ class App extends Component {
       });
   }
 
+  handleBack = () => {
+    console.log('hello');
+  };
+
   render() {
-
-    console.log(this.state.apod)
-
-
+    console.log(this.state.apod);
 
     return (
       <div>
@@ -42,14 +44,14 @@ class App extends Component {
         </div>
         <div className="Slider">
           <BackButton />
-            <Apod 
-              // url={this.state.apod.url}
-              // date={this.state.apod.date} 
-              // title={this.state.apod.title} 
-              // explanation={this.state.apod.explanation} 
-              {...this.state}
-              //! the spread operator allows you to pass all the contents of an object
-            />
+          <Apod
+            // url={this.state.apod.url}
+            // date={this.state.apod.date}
+            // title={this.state.apod.title}
+            // explanation={this.state.apod.explanation}
+            {...this.state}
+            //! the spread operator allows you to pass all the contents of an object
+          />
           <NextButton />
         </div>
       </div>

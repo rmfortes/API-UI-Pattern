@@ -1,9 +1,13 @@
 import React, { Component } from "react";
 
 class BackButton extends Component {
+  handleBack = () => {
+    console.log(this);
+  };
+  
     render() {
       return (
-          <button>Back</button>
+          <button onClick={this.handleBack}>Back</button>
       );
     }
   }
