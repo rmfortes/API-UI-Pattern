@@ -1,11 +1,14 @@
 import React, { Component } from "react";
 
 class NextButton extends Component {
-    render() {
-      return (
-          <button>Next</button>
-      );
-    }
+  constructor() {
+    super();
   }
 
-  export default NextButton;
+  render() {
+    console.log(this.props)
+    return <button onClick={this.props.onClick}>Next</button>;
+  }
+}
+
+export default NextButton;

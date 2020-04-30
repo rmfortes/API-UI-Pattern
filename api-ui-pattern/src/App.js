@@ -9,6 +9,16 @@ class App extends Component {
   constructor() {
     super();
     this.handleBack = this.handleBack.bind(this);
+    this.handleNext = this.handleNext.bind(this);
+
+    const URL = `https://api.nasa.gov/planetary/apod?api_key=PnBgWXOOulAOFC02ZcE1Ve5VLz79FknpoBOcXcK7`;
+    this.dates = [
+      `${URL}&date=2020-04-30`,
+      `${URL}&date=2020-04-29`,
+      `${URL}&date=2020-04-28`,
+      `${URL}&date=2020-04-27`,
+      `${URL}&date=2020-04-26`,
+    ];
 
     this.state = {
       apod: {},
@@ -16,43 +26,54 @@ class App extends Component {
   }
 
   componentDidMount() {
-    let URL =
-      "https://api.nasa.gov/planetary/apod?api_key=P4ncDIoRkQG82aKvVwMr8Gc4KX2dpGRTOvJptk3Y";
-
-    fetch(URL)
+    fetch(this.dates[2])
       .then((res) => res.json())
       .then((res) => {
-        // console.log(res);
         this.setState({
           apod: res,
         });
-        console.log(this.state.apod.date)
+        console.log(this.state.apod);
       });
   }
 
-  handleBack = () => {
-    console.log('hello');
+  handleBack = (e) => {
+    e.preventDefault();
+    console.log("hello");
+
+    fetch(this.dates[1])
+      .then((res) => res.json())
+      .then((res) => {
+        this.setState({
+          apod: res,
+        });
+        console.log(this.state.apod);
+      });
+  };
+
+  handleNext = (e) => {
+    e.preventDefault();
+    console.log("hello");
+
+    fetch(this.dates[4])
+      .then((res) => res.json())
+      .then((res) => {
+        this.setState({
+          apod: res,
+        });
+        console.log(this.state.apod);
+      });
   };
 
   render() {
-    console.log(this.state.apod);
-
     return (
       <div>
         <div className="navBar">
           <NavBar />
         </div>
         <div className="Slider">
-          <BackButton />
-          <Apod
-            // url={this.state.apod.url}
-            // date={this.state.apod.date}
-            // title={this.state.apod.title}
-            // explanation={this.state.apod.explanation}
-            {...this.state}
-            //! the spread operator allows you to pass all the contents of an object
-          />
-          <NextButton />
+          <BackButton onClick={this.handleBack} />
+          <Apod {...this.state} />
+          <NextButton onClick={this.handleNext} />
         </div>
       </div>
     );

@@ -1,15 +1,15 @@
 import React, { Component } from "react";
 
 class BackButton extends Component {
-  handleBack = () => {
-    console.log(this);
-  };
-  
-    render() {
-      return (
-          <button onClick={this.handleBack}>Back</button>
-      );
-    }
+  constructor() {
+    super();
+
   }
 
-  export default BackButton;
+  render() {
+    console.log(this.props)
+    return <button onClick={this.props.onClick}>Back</button>;
+  }
+}
+
+export default BackButton;

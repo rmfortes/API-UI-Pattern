@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 class Apod extends Component {
     render() {
-        console.log(this.props)
+        
         return (
             <div className="contents">
             <div className="image">
