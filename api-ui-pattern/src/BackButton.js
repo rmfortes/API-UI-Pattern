@@ -7,7 +7,6 @@ class BackButton extends Component {
   }
 
   render() {
-    console.log(this.props)
     return <button onClick={this.props.onClick}>Back</button>;
   }
 }

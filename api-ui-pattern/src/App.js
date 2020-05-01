@@ -32,13 +32,11 @@ class App extends Component {
         this.setState({
           apod: res,
         });
-        console.log(this.state.apod);
       });
   }
 
   handleBack = (e) => {
     e.preventDefault();
-    console.log("hello");
 
     fetch(this.dates[1])
       .then((res) => res.json())
@@ -46,13 +44,11 @@ class App extends Component {
         this.setState({
           apod: res,
         });
-        console.log(this.state.apod);
       });
   };
 
   handleNext = (e) => {
     e.preventDefault();
-    console.log("hello");
 
     fetch(this.dates[4])
       .then((res) => res.json())
@@ -60,7 +56,6 @@ class App extends Component {
         this.setState({
           apod: res,
         });
-        console.log(this.state.apod);
       });
   };
 
